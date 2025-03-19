@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Construção de Fábricas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="sidebar">
+            <div id="ironInfo" class="info">
+                <span id="ironLabel">Ferro: </span><span id="iron">0</span>
+                <button id="sellIronBtn">Vender Ferro</button>
+            </div>
+            <div id="moneyInfo" class="info">
+                <span id="moneyLabel">Dinheiro: </span><span id="money">600</span>
+            </div>
+            <div id="futureInfo" class="info">
+                <p>Próximos elementos...</p>
+            </div>
+        </div>
+
+        <div id="gameArea"></div>
+        
+        <!-- Popup para escolher a fábrica -->
+        <div id="factoryPopup" class="factory-popup">
+            <p>Escolha o tipo de fábrica:</p>
+            <button class="factory-btn" data-type="1">Fábrica Tipo 1 (500, 5 ferro/s)</button>
+            <button class="factory-btn" data-type="2">Fábrica Tipo 2 (1000, 15 ferro/s)</button>
+            <button class="factory-btn" data-type="3">Fábrica Tipo 3 (1750, 25 ferro/s)</button>
+            <div>
+                <label for="factoryName">Nome da Fábrica:</label>
+                <input type="text" id="factoryName" placeholder="Nome da fábrica">
+            </div>
+            <button id="confirmBuildBtn">Construir Fábrica</button>
+            <button id="closePopupBtn">Fechar</button> <!-- Botão para fechar o popup -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
