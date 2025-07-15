@@ -1,189 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayBR - Pagamentos Online Seguros</title>
+    <title>SaaSFlow - Dashboard de Pagamentos</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <i class="fas fa-credit-card"></i>
-                <span>PayBR</span>
+        <div class="header-left">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>SaaSFlow</span>
             </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#precos">Preços</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#" class="btn-login" onclick="showLogin()">Entrar</a></li>
-                <li><a href="#" class="btn-signup" onclick="showSignup()">Cadastrar</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Pagamentos online <span class="highlight">simples e seguros</span></h1>
-            <p>Aceite pagamentos de qualquer lugar do mundo com nossa plataforma completa de pagamentos online.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="showPaymentDemo()">Testar Pagamento</button>
-                <button class="btn btn-secondary" onclick="showDashboard()">Ver Dashboard</button>
+            <nav class="nav-tabs">
+                <a href="#" class="nav-tab active">Visão Geral</a>
+                <a href="#" class="nav-tab">Pagamentos</a>
+                <a href="#" class="nav-tab">Clientes</a>
+                <a href="#" class="nav-tab">Produtos</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="btn-secondary">
+                <i class="fas fa-plus"></i>
+                Novo
+            </button>
+            <div class="user-menu">
+                <img src="/placeholder.svg?height=32&width=32" alt="Avatar" class="avatar">
+                <span>João Silva</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="payment-card-demo">
-                <div class="card">
-                    <div class="card-chip"></div>
-                    <div class="card-number">**** **** **** 1234</div>
-                    <div class="card-info">
-                        <span>João Silva</span>
-                        <span>12/25</span>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Pagamentos</h3>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Visão Geral</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Transações</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Clientes</a></li>
+                    <li><a href="#"><i class="fas fa-file-invoice"></i> Faturas</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Produtos</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-box"></i> Catálogo</a></li>
+                    <li><a href="#"><i class="fas fa-tags"></i> Preços</a></li>
+                    <li><a href="#"><i class="fas fa-percentage"></i> Cupons</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Configurações</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-cog"></i> Conta</a></li>
+                    <li><a href="#"><i class="fas fa-key"></i> API Keys</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Segurança</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div>
+                    <h1>Visão Geral</h1>
+                    <p>Acompanhe o desempenho dos seus produtos SaaS</p>
+                </div>
+                <div class="page-actions">
+                    <select class="period-selector">
+                        <option>Últimos 7 dias</option>
+                        <option>Últimos 30 dias</option>
+                        <option>Últimos 3 meses</option>
+                    </select>
+                    <button class="btn-primary">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Metrics Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-title">Receita Total</span>
+                        <i class="fas fa-dollar-sign metric-icon"></i>
+                    </div>
+                    <div class="metric-value">R$ 47.832,50</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +12,5% vs mês anterior
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-title">Assinantes Ativos</span>
+                        <i class="fas fa-users metric-icon"></i>
+                    </div>
+                    <div class="metric-value">1.247</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +8,3% vs mês anterior
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-title">Taxa de Conversão</span>
+                        <i class="fas fa-chart-pie metric-icon"></i>
+                    </div>
+                    <div class="metric-value">3,2%</div>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        -0,5% vs mês anterior
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span class="metric-title">MRR</span>
+                        <i class="fas fa-sync metric-icon"></i>
+                    </div>
+                    <div class="metric-value">R$ 15.944,17</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +15,2% vs mês anterior
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Products Section -->
-    <section id="produtos" class="products">
-        <div class="container">
-            <h2>Nossos Produtos</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h3>Checkout Online</h3>
-                    <p>Aceite pagamentos em seu site com nosso checkout otimizado</p>
-                    <button class="btn btn-outline" onclick="showCheckoutDemo()">Ver Demo</button>
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Receita nos Últimos 30 Dias</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-color primary"></span>
+                                Receita
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Pagamentos Mobile</h3>
-                    <p>SDK para aplicativos móveis iOS e Android</p>
-                    <button class="btn btn-outline">Em Breve</button>
-                </div>
-                <div class="product-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Analytics</h3>
-                    <p>Relatórios detalhados sobre suas vendas e pagamentos</p>
-                    <button class="btn btn-outline" onclick="showAnalytics()">Ver Relatórios</button>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Produtos Mais Vendidos</h3>
+                    </div>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-info">
+                                <span class="product-name">TaskFlow Pro</span>
+                                <span class="product-price">R$ 49,90/mês</span>
+                            </div>
+                            <div class="product-stats">
+                                <span class="product-sales">342 vendas</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-info">
+                                <span class="product-name">Analytics Plus</span>
+                                <span class="product-price">R$ 29,90/mês</span>
+                            </div>
+                            <div class="product-stats">
+                                <span class="product-sales">287 vendas</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-info">
+                                <span class="product-name">CRM Starter</span>
+                                <span class="product-price">R$ 19,90/mês</span>
+                            </div>
+                            <div class="product-stats">
+                                <span class="product-sales">198 vendas</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-info">
+                                <span class="product-name">Email Marketing</span>
+                                <span class="product-price">R$ 39,90/mês</span>
+                            </div>
+                            <div class="product-stats">
+                                <span class="product-sales">156 vendas</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="precos" class="pricing">
-        <div class="container">
-            <h2>Preços Transparentes</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">2,9% <span>por transação</span></div>
-                    <ul>
-                        <li>Checkout online</li>
-                        <li>Dashboard básico</li>
-                        <li>Suporte por email</li>
-                    </ul>
-                    <button class="btn btn-primary">Começar</button>
+            <!-- Recent Transactions -->
+            <div class="transactions-section">
+                <div class="section-header">
+                    <h3>Transações Recentes</h3>
+                    <a href="#" class="view-all">Ver todas</a>
                 </div>
-                <div class="pricing-card featured">
-                    <h3>Professional</h3>
-                    <div class="price">2,4% <span>por transação</span></div>
-                    <ul>
-                        <li>Todos os recursos do Starter</li>
-                        <li>Analytics avançado</li>
-                        <li>API completa</li>
-                        <li>Suporte prioritário</li>
-                    </ul>
-                    <button class="btn btn-primary">Escolher</button>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Personalizado</div>
-                    <ul>
-                        <li>Todos os recursos</li>
-                        <li>Gerente dedicado</li>
-                        <li>SLA garantido</li>
-                        <li>Integração personalizada</li>
-                    </ul>
-                    <button class="btn btn-primary">Contatar</button>
+                <div class="transactions-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Produto</th>
+                                <th>Status</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsBody">
+                            <!-- Transactions will be populated by JavaScript -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form class="contact-form" onsubmit="handleContactForm(event)">
-                <div class="form-group">
-                    <input type="text" id="name" required>
-                    <label for="name">Nome</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" required></textarea>
-                    <label for="message">Mensagem</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Modals -->
-    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
-        <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div id="modal-content"></div>
-        </div>
+        </main>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>PayBR</h4>
-                    <p>Pagamentos online seguros e confiáveis para o Brasil.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Produtos</h4>
-                    <ul>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Mobile SDK</a></li>
-                        <li><a href="#">Analytics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Suporte</h4>
-                    <ul>
-                        <li><a href="#">Documentação</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 PayBR. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
